@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	html {
+		font: 20px "Helvetica", sans-serif;
+	}
+	</style>
+	<meta charset="utf-8">
+	<title>Resultado Pesquisa Recursiva - Projeto BD</title>
+</head>
+<body>
+	<table border="2px">
+		<thead>
+			<tr>
+				<th>Ultima Sub-Categoria</th>
+			</tr>
+		</thead>
+		<tbody>	
+		{% for record in cursor %}
+			<tr>
+				<td>{{ record[0] }}</td>
+		{% endfor %}
+		</tbody>
+	</table>
+</body> 
+</html>

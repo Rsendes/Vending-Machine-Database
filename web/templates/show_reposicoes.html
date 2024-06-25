@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	html {
+		font: 20px "Helvetica", sans-serif;
+	}
+	</style>
+	<meta charset="utf-8">
+	<title>Reposicoes IVM - Projeto BD</title>
+</head>
+<body>
+	<table border="2px">
+		<thead>
+			<tr>
+				<th>Numero Serie</th>
+				<th>Nome do Fabricante</th>
+				<th>Categoria</th>
+				<th>Unidades</th>
+			</tr>
+		</thead>
+		<tbody>	
+		{% for record in cursor %}
+			<tr>
+				<td>{{ record[0] }}</td>
+				<td>{{ record[1] }}</td>
+				<td>{{ record[2] }}</td>
+				<td>{{ record[3] }}</td>
+		{% endfor %}
+		</tbody>
+	</table>
+</body> 
+</html>

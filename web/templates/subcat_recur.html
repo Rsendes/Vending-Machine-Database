@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	html {
+		font: 20px "Helvetica", sans-serif;
+	}
+	</style>
+	<meta charset="utf-8">
+	<title>Pesquisa Recursiva - Projeto BD</title>
+</head>
+<body>
+	<table border="2px">
+		<thead>
+			<tr>
+				<th>Super Categoria</th>
+				<th>Sub Categoria</th>
+			</tr>
+		</thead>
+		<tbody>	
+		{% for record in cursor %}
+			<tr>
+				<td>{{ record[0] }}</td>
+				<td>{{ record[1] }}</td>
+		{% endfor %}
+		</tbody>
+	</table>
+	<h3>Pesquisar Recursivamente</h3>
+	<form action="resultado_pesquisa_recur" method="post">
+		<h4><p>Sub Categoria</p></h4>
+		<p>Inserir a super_categoria: <input type="text" name="super_cat"></p>
+		<p><input type="submit" value="Submeter"></p> 
+		</form> 
+</body> 
+</html>

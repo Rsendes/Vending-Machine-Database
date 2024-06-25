@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	html {
+		font: 20px "Helvetica", sans-serif;
+	}
+	</style>
+	<meta charset="utf-8">
+	<title>Reposicoes IVM - Projeto BD</title>
+</head>
+<body>
+	<table border="2px">
+		<thead>
+			<tr>
+				<th>Numero Serie</th>
+				<th>Nome do Fabricante</th>
+			</tr>
+		</thead>
+		<tbody>	
+		{% for record in cursor %}
+			<tr>
+				<td>{{ record[0] }}</td>
+				<td>{{ record[1] }}</td>
+		{% endfor %}
+		</tbody>
+	</table>
+	<h3>Pesquisar IVM</h3>
+	<form action="reposicoes_ivm" method="post">
+		<h4><p>Numero de Serie</p></h4>
+		<p>Inserir o numero de serie: <input type="text" name="serie"></p> 
+		<h4><p>Nome do Fabricante</p></h4> 
+		<p>Inserir o nome do fabricante: <input type="text" name="fabricante"></p>
+		<p><input type="submit" value="Submeter"></p> 
+		</form> 
+</body> 
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	html {
+		font: 20px "Helvetica", sans-serif;
+	}
+	</style>
+	<meta charset="utf-8">
+	<title>Adicionar Sub Categoria - Projeto BD</title>
+</head>
+<body>
+	<table border="2px">
+		<thead>
+			<tr>
+				<th>Super Categoria</th>
+				<th>Sub Categoria</th>
+			</tr>
+		</thead>
+		<tbody>	
+		{% for record in cursor %}
+			<tr>
+				<td>{{ record[0] }}</td>
+				<td>{{ record[1] }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	<h3> Adicionar nova sub-categoria</h3>
+	<form action="insert_sub_cat" method="post">
+		<p>Super categoria</p>
+		<p>Inserir super categoria respetiva:<input type="text" name="nome_super"></p>
+		<p>Nova categoria</p>
+		<p>Inserir sub categoria:<input type="text" name="nome_sub"></p>
+
+		<p><input type="submit" value="Submit"></p>
+	</form>
+</body>
+</html>

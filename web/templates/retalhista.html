@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	html {
+		font: 20px "Helvetica", sans-serif;
+	}
+	</style>
+	<meta charset="utf-8">
+	<title>Retalhista - Projeto BD</title>
+</head>
+<body>
+	<table border="2px">
+		<thead>
+			<tr>
+				<th>Tin</th>
+				<th>Nome do Retalhista</th>
+				<th>Remover</th>
+			</tr>
+		</thead>
+		<tbody>	
+		{% for record in cursor %}
+			<tr>
+				<td>{{ record[0] }}</td>
+				<td>{{ record[1] }}</td>
+				<td><a href="remover_retalhista?tin={{ record[0] }}">Remover</a></td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	<h3> Adicionar Novo Retalhista</h3>
+	<form action="add_retalhista" method="post">
+		<h4><p>Novo retalhista</p></h4>
+		<p>Inserir nome do retalhista: <input type="text" name="nome_retalhista"></p>
+		<h4><p>TIN</p></h4>
+		<p>Inserir TIN do produto associado: <input type="text" name="tin"></p>
+
+		<p><input type="submit" value="Submeter"></p>
+	</form>
+</body>
+</html>

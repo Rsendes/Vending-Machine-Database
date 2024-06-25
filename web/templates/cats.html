@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			font: 20px "Helvetica", sans-serif;
+			
+		}
+		button {
+			padding: 5px;
+			margin-top: 15px;
+			font-size: 15px;
+			background-color: light-gray;
+		}
+	</style>
+	<meta charset="utf-8">
+	<title>Consultar categorias</title>
+</head>
+<body>
+{% if cursor %}
+	<table border="2px">
+		<thead>
+			<tr>
+			<th>Nome</th>
+			<th>Remover</th>
+			</tr>
+		</thead>
+		{% for record in cursor %}
+		<tbody>
+			<td>{{ record[0] }}</td>
+			<td><a href="remover_cat?nome={{ record[0] }}">Remover</a></td>
+		</tbody>
+		{% endfor %}
+	</table>
+	<button type="button" onclick="window.location.pathname='ist1100721/app.cgi/nova_cat'">Adicionar Categoria</button>
+	<br>
+	<button type="button" onclick="window.location.pathname='ist1100721/app.cgi/nova_sub_cat'">Adicionar Sub Categoria</button>
+{% else %}
+	<p>Erro: Nao foi possivel obter dados da base de dados! </p>
+{% endif %}
+</body>
+</html>
